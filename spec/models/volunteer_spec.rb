@@ -2,19 +2,21 @@ require "rails_helper"
 
 describe Volunteer, type: :model do
   describe "validations" do
-    it {should validate_presence_of(:name)}
-    it {should validate_presence_of(:role)}
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:role) }
+  end
 
-    let(:nick) { Volunteer.create(name: "nick", role: 1) }
-    let(:lori) { Volunteer.create(name: "lori", role: 1) }
-    let(:adam) { Volunteer.create(name: "adam", role: 0) }
-    let(:rachel) { Volunteer.create(name: "rachel", role: 0) }
+  describe "methods" do
+    let(:nick)     { Volunteer.create(name: "nick", role: 1) }
+    let(:lori)     { Volunteer.create(name: "lori", role: 1) }
+    let(:adam)     { Volunteer.create(name: "adam", role: 0) }
+    let(:rachel)   { Volunteer.create(name: "rachel", role: 0) }
 
-    let(:vocals) { Instrument.create(name: "vocals") }
-    let(:guitar) { Instrument.create(name: "guitar") }
+    let(:vocals)   { Instrument.create(name: "vocals") }
+    let(:guitar)   { Instrument.create(name: "guitar") }
     let(:acoustic) { Instrument.create(name: "acoustic") }
-    let(:drums) { Instrument.create(name: "drums") }
-    let(:bass) { Instrument.create(name: "bass") }
+    let(:drums)    { Instrument.create(name: "drums") }
+    let(:bass)     { Instrument.create(name: "bass") }
 
     before do
       vocals.volunteers << [nick, lori]
