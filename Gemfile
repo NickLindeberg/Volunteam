@@ -58,6 +58,7 @@ group :development, :test do
   gem 'pry'
   gem 'active_designer'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'shoulda-matchers'
 end
 
 group :development do
